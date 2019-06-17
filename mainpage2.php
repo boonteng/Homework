@@ -296,11 +296,27 @@
                     </div>
                 </div>
 
-                <!-- END Col two -->
-                <div class="col-sm-4">
-                    <div class="card text-center">
-                        <div class="title">
-                            <i class="fa fa-rocket" aria-hidden="true"></i>
+                       <!-- END Col two -->
+        <div class="col-sm-4">
+          <div class="card text-center">
+            <div class="title">
+			<div id="div1" class="fa"></div>
+
+		<script>
+			function hourglass() {
+ 			 var a;
+ 			 a = document.getElementById("div1");
+  			a.innerHTML = "&#xf251;";
+  			setTimeout(function () {
+      			a.innerHTML = "&#xf252;";
+    			}, 1000);
+  			setTimeout(function () {
+      			a.innerHTML = "&#xf253;";
+    			}, 2000);
+			}
+			hourglass();
+			setInterval(hourglass, 3000);
+			</script>
                             <h2>Due in 1 week</h2>
                         </div>
                                             
