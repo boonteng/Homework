@@ -1,154 +1,69 @@
-<html> 
-<head> 
-<?php
+<html>
+  <head>
+	<?php
+	
+	
 require 'popupbar.php';
-?>
-<style>
-body{
-	margin:0;
-	padding:0;
-	background: url(background.png);
-	background-size:cover;
-	background-position:center;
-	font-family: sans-serif;
-}
 
-.loginbox{
-	width:320px;
-	height: 420px;
-	background: #000;
-	color: #fff;
-	top: 50%;
-	left: 50%;
-	position:absolute;
-	transform:translate(-50%,-50%);
-	box-sizing:border-box;
-	padding: 70px 30px;
-}
-
-.icon{
-	width: 100px;
-	height: 100px;
-	border-radius: 50%;
-	position: absolute;
-	top: -50px;
-	left: calc(50% - 50px);
-}
-
-h1{
-	margin:0;
-	padding:0 0 20px;
-	text-align: center;
-	font-size: 22px;
-}
 	
-.loginbox p{
-	margin: 0;
-	padding: 0;
-	font-weight: bold;
-}
-
-.loginbox input{
-	width:100%;
-	margin-bottom:20px;
-}
-
-.loginbox input[type="text"], input[type="password"]
-{
-	border:none;
-	border-bottom: 1px solid #fff;
-	background: transparent;
-	outline: none;
-	height: 40px;
-	color: #fff;
-	font-size: 16px;
-}
-
-.loginbox input[type="submit"]
-{
-	border:none;
-	outline:none;
-	height:40px;
-	background:#fb2525;
-	color: #fff;
-	font-size:18px;
-	border-radius:20px;
-}
-
-.loginbox input[type="submit"]:hover
-{
-	cursor:pointer;
-	background:#ffc107;
-	color: #000;
-}
-.loginbox a{
-	text-decoration:none;
-	font-size: 12px;
-	line-height: 20px;
-	color: darkgrey;
-}
-.loginbox a:hover
-{
-	color:#ffc107;
-}
 	
-</style>
-<title>Homework Planner</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-<body>
-	<div class="loginbox">
-	<img src="homework.png" class="icon">
-		<h1>Homework Planner</h1>
-		<form name="loginform" action="loginprocess.php" method="post">
-		<p>Email</p>
-		<input type="text" name="email" placeholder="Enter Email">
-		<p>Password</p>
-		<input type="password" name="password" placeholder="Enter Password">
-		<input type="submit" name="" value="Login">
-		<a href="#">Lost your password?</a><br>
-		<a href="signup.php">Don't have an account?</a>
-		</form>
-<script>
-	$('[name="loginform"]').submit(function(e)
-	{
-	    $.Event(e).preventDefault();
-	    $.ajax({
-	        url: $(this).attr('action'),
-	        type: $(this).attr('method'),
-	        data: $(this).serialize(),
-	        dataType: 'JSON',
-	    }).done(function(data)
-	    {        
-	     	
-   			if (data.status == 'success')
-	        {
-	            new Noty({          
-	                type: data.status,
-	                text: data.message,            
-	                timeout: 2000
-	            }).show();
-				
-					setTimeout(function()
-	            {
-	               window.location = "openPage.php";
-	            }, 1000);	
-	        }
-	        else
-	        {
-	            new Noty({          
-	                type: data.status,
-	                text: data.message,            
-	                timeout: 2000
-	            }).show();
-	        }  
+	?>
+  
+    <title>Homework Planner</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/foliou/2-0-0/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Google fonts - Raleway-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:300,400,700,900">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="https://d19m59y37dris4.cloudfront.net/foliou/2-0-0/css/style.default.css" id="theme-stylesheet">
+    
+    
+   
+    <!-- Navbar-->
+    <header class="header">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container"><a href="index.php" class="navbar-brand">Homewerk</a>
+         
+			<div id="navigation" class="collapse navbar-collapse navbar-right">
+            <ul class="navbar-nav ml-auto">
+			</ul><a id="login_click" href="login.php" class="btn navbar-btn btn-outline-light ml-lg-3 d-none d-lg-block">Log In</a>
+			</ul><a id="register_click" href="signup.php" class="btn navbar-btn btn-outline-light ml-lg-3 d-none d-lg-block">Sign Up</a>
 		
-	    })
-	});
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- End Navbar-->
+    <!-- Hero Section-->
+    <section id="hero" class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="text col-lg-6 col-md-12">
+            <h3 class="h4 text-uppercase text-shadow text-thin">Welcome To</h3>
+            <h1 class="text-shadow">HOMEWERK</h1>
+            <p>Manage your homeworks and assignments wisely</p><a style="color:red" href="login.php" class="btn btn-light">START NOW</a>
+         
+		  
+		  
+		  </div>
+          <div class="mockup col-lg-6 d-none d-lg-block"><img src="https://d19m59y37dris4.cloudfront.net/foliou/2-0-0/img/hero-macbook.png" alt="Mockup" class="img-fluid"></div>
+        </div>
+      </div>
+    </section>
+    <!-- End Hero Section-->
+	
+  
+	
 
-</script>		
-</body>
-</head>
-</html>
-
-
-
+	  
+	
+	  
+	  
+	  
+	  
+    </script>
+	</body>
+</html>	
