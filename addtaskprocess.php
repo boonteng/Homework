@@ -1,6 +1,9 @@
 <?php
 require "connection.php";
 
+$duedate = $_POST['duedate'];
+
+
 $res = array();
 if(!empty($_POST['tasktitle']) && !empty($_POST['taskdescription']))
 {
@@ -9,7 +12,7 @@ if(!empty($_POST['tasktitle']) && !empty($_POST['taskdescription']))
 	$taskdescription = $_POST['taskdescription'];
 	$userid = $_POST['userid'];
 	
-	$sql ="INSERT INTO task(`tasktitle`,`taskdescription`,`userid`)VALUES('$tasktitle','$taskdescription','$userid')";
+	$sql ="INSERT INTO task(`tasktitle`,`taskdescription`,`userid`,`duedate`)VALUES('$tasktitle','$taskdescription','$userid','$duedate')";
 			mysqli_query($conn,$sql);
 			
 			$res['status'] = 'success';
