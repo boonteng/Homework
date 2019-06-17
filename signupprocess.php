@@ -33,7 +33,6 @@ if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['passw
 			$res['message'] = 'Register success';
 			}
 			
-			
 		}
 	}else{
 			$res['status'] = 'error';
@@ -46,7 +45,5 @@ if(!empty($_POST['username']) && !empty($_POST['email']) && !empty($_POST['passw
 }
 
 echo json_encode($res);
-
-
 
 ?>
