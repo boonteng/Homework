@@ -46,10 +46,9 @@ require 'popupbar.php';
     <header class="header">
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container"><a href="index.html" class="navbar-brand">Homewerk</a>
-          <button type="button" data-toggle="collapse" data-target=".navbar-collapse" class="navbar-toggler">Menu<i class="fa fa-align-justify"></i></button>
-          <div id="navigation" class="collapse navbar-collapse navbar-right">
-            <ul class="navbar-nav ml-auto">
-            </ul><div style="font-family: trebuchet ms,helvetica,sans-serif;color:white">Hello <?php echo $username ?></div>
+         
+ 
+            <div style="font-family: trebuchet ms,helvetica,sans-serif;color:white">Hello <?php echo $username ?></div>
 			</ul>
 			<a href="" name="signout" class="btn navbar-btn btn-outline-light ml-lg-3 d-none d-lg-block">Sign out</a>
 			<form name="signoutform" action="signout.php" method="GET" hidden>
