@@ -207,6 +207,8 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="navbar-brand">Hello, <?php echo $username ?></a></li>
                 <li>
+				<li><a class="navbar-brand">Result</a></li>
+                <li>
                     <a href="" class="navbar-brand" name="signout" >Sign Out</a>
                     <form name="signoutform" action="signout.php" method="GET" hidden></form>
                 </li>
@@ -228,6 +230,7 @@
                         <div class="option">
                             <?php while ($row=mysqli_fetch_assoc($query_process_task)) {?>
                                		<p>
+									
 
                                		<form name="removeform" action="deletetask.php" method="post" style="display: inline;" >
                                  	 <span style="color:white;font-size: 16px">  <?php echo $row['tasktitle'];?>    </span>
@@ -242,6 +245,10 @@
 	                                    <a name="remove_btn" id="remove">&#x274C</a>
 	                                    <button id="remove" type="submit" hidden>&#x274C</button>
                                     </form>
+									
+									<div class="progress">
+									<div class="progress-bar" role="progressbar" style="width:<?php echo $row['progress'];?>%"aria-valuenow="<?php echo $row['progress'];?>" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
 
                                  
                                     </p>
@@ -296,27 +303,11 @@
                     </div>
                 </div>
 
-                       <!-- END Col two -->
-        <div class="col-sm-4">
-          <div class="card text-center">
-            <div class="title">
-			<div id="div1" class="fa"></div>
-
-		<script>
-			function hourglass() {
- 			 var a;
- 			 a = document.getElementById("div1");
-  			a.innerHTML = "&#xf251;";
-  			setTimeout(function () {
-      			a.innerHTML = "&#xf252;";
-    			}, 1000);
-  			setTimeout(function () {
-      			a.innerHTML = "&#xf253;";
-    			}, 2000);
-			}
-			hourglass();
-			setInterval(hourglass, 3000);
-			</script>
+                <!-- END Col two -->
+                <div class="col-sm-4">
+                    <div class="card text-center">
+                        <div class="title">
+                            <i class="fa fa-rocket" aria-hidden="true"></i>
                             <h2>Due in 1 week</h2>
                         </div>
                                             
@@ -414,6 +405,13 @@
     </div>
   </div>
   
+    <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Status:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" name="progress" >
+    </div>
+  </div>
+
   <div class="form-group"> 
     <div class="col-sm-offset-2 col-sm-10">
       <button type="submit" class="btn btn-default">Edit</button>
@@ -471,6 +469,12 @@
     </div>
   </div>
 
+  <div class="form-group">
+    <label class="control-label col-sm-2" for="pwd">Status:</label>
+    <div class="col-sm-10"> 
+      <input type="text" class="form-control" name="progress" >
+    </div>
+  </div>
 
   
   <div class="form-group"> 
@@ -579,7 +583,7 @@
                 
                     setTimeout(function()
                 {
-                   window.location = "login.php";
+                   window.location = "index.php";
                 }, 1000);   
             
         
