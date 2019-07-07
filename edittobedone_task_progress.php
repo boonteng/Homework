@@ -13,9 +13,10 @@
 			$tasktitle = $_POST['tasktitle'];
 			$taskdescription = $_POST['taskdescription'];
 			$duedate=$_POST['duedate'];
+			$progress = $_POST['progress'];
 
 
-			$sql = "UPDATE `task` SET `tasktitle`='$tasktitle',`taskdescription`='$taskdescription',`duedate`='$duedate' WHERE `id`='$taskid'";	
+			$sql = "UPDATE `task` SET `tasktitle`='$tasktitle',`taskdescription`='$taskdescription',`duedate`='$duedate',`progress`='$progress' WHERE `id`='$taskid'";	
 
 
 		if (mysqli_query($conn, $sql)) {
