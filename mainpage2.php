@@ -207,7 +207,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a class="navbar-brand">Hello, <?php echo $username ?></a></li>
                 <li>
-				<li><a class="navbar-brand">Result</a></li>
+				<li><a class="navbar-brand" href="result.php">Result</a></li>
                 <li>
                     <a href="" class="navbar-brand" name="signout" >Sign Out</a>
                     <form name="signoutform" action="signout.php" method="GET" hidden></form>
